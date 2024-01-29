@@ -27,22 +27,24 @@
 import React, { createContext, useContext, useState } from "react";
 import ComponentB from "./componentB";
 
-export const userContext = createContext();
+// Step 1: Create a context
+export const UserContext = createContext();
 
-function componentA(props) {
-  const [user, setUser] = useState("Rishu");
+function ComponentA(props) {
+  const [user, setUser] = useState("My Name is Rishu");
 
   return (
     <>
       <div className="box">
         ComponentA
         <div>Hello {user}</div>
-        <useContext.Provider value={user}>
-          <ComponentB user={user} />
-        </useContext.Provider>
+        {/* Step 2: Use the Provider component to provide the context value */}
+        <UserContext.Provider value={user}>
+          <ComponentB />
+        </UserContext.Provider>
       </div>
     </>
   );
 }
 
-export default componentA;
+export default ComponentA;

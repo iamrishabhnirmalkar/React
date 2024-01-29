@@ -1,12 +1,26 @@
 import React from "react";
 
-function componentD(props) {
+import { useContext } from "react";
+import { UserContext } from "./componentA";
+
+// function componentD(props) {
+//   return (
+//     <div className="box">
+//       ComponentD
+//       <div>Byee {props.user}</div>
+//     </div>
+//   );
+// }
+function ComponentD(props) {
+  // Step 3: Consume the context using useContext hook
+  const user = useContext(UserContext);
+
   return (
     <div className="box">
       ComponentD
-      <div>Byee {props.user}</div>
+      <div>Hello from ComponentA: {user}</div>
     </div>
   );
 }
 
-export default componentD;
+export default ComponentD;
