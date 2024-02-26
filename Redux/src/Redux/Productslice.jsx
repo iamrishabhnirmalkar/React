@@ -3,5 +3,6 @@ const productSlice = createSlice({
   name: "product",
   initialState: {
     data: [],
+    status:
   },
 });
